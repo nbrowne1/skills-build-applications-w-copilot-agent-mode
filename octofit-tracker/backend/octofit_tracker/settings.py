@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-c==l92@b+33-wwr=g6y5)rsw1eweq@^1^zzkw6m%xkb67h)v6^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# Allow host access to codespace URL and localhost
+ALLOWED_HOSTS = ['organic-palm-tree-4j6r5ggg469h7766-8000.app.github.dev', 'localhost']
 
 
 # Application definition
