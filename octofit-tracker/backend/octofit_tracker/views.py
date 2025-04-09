@@ -8,12 +8,13 @@ from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, Lea
 @api_view(['GET'])
 def api_root(request, format=None):
     base_url = os.getenv('CODESPACE_URL', 'http://localhost:8000/')
+    api_suffix = 'api/'
     return Response({
-        'users': base_url + 'api/users/',
-        'teams': base_url + 'api/teams/',
-        'activities': base_url + 'api/activities/',
-        'leaderboard': base_url + 'api/leaderboard/',
-        'workouts': base_url + 'api/workouts/'
+        'users': base_url + api_suffix + 'users/',
+        'teams': base_url + api_suffix + 'teams/',
+        'activities': base_url + api_suffix + 'activities/',
+        'leaderboard': base_url + api_suffix + 'leaderboard/',
+        'workouts': base_url + api_suffix + 'workouts/'
     })
 
 class UserViewSet(viewsets.ModelViewSet):
