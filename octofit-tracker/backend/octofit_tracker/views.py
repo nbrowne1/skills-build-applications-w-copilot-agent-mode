@@ -7,14 +7,13 @@ from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, Lea
 
 @api_view(['GET'])
 def api_root(request, format=None):
-    base_url = os.getenv('CODESPACE_URL', 'http://localhost:8000/')
-    api_suffix = 'api/'
+    base_url = 'https://organic-palm-tree-4j6r5ggg469h7766-8000.app.github.dev/api/'
     return Response({
-        'users': base_url + api_suffix + 'users/',
-        'teams': base_url + api_suffix + 'teams/',
-        'activities': base_url + api_suffix + 'activities/',
-        'leaderboard': base_url + api_suffix + 'leaderboard/',
-        'workouts': base_url + api_suffix + 'workouts/'
+        'users': base_url + 'users/',
+        'teams': base_url + 'teams/',
+        'activities': base_url + 'activities/',
+        'leaderboard': base_url + 'leaderboard/',
+        'workouts': base_url + 'workouts/'
     })
 
 class UserViewSet(viewsets.ModelViewSet):
